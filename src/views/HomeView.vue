@@ -1,5 +1,5 @@
 <template>
   <main>
-    <h1>CRUD Application</h1>
+    <h1>This is Home page</h1>
   </main>
 </template>
