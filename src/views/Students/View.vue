@@ -9,7 +9,7 @@
           </RouterLink>
         </h4>
       </div>
-      <div class="table table-bordered">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>ID</th>
@@ -26,12 +26,14 @@
 
           </tr>
         </tbody>
-      </div>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
+
+import axios from 'axios'
 
 export default {
   name: 'students',
@@ -40,9 +42,18 @@ export default {
       students: []
     }
   },
-  mounted(){
+  mounted() {
+    
+    this.getStudents();
+    // console.log('i am here')
+  }, 
+  methods: {
+    getStudents() {
 
-    console.log('i am here')
+      axios.get('http://localhost:8000/api/students').then(res => {
+        console.log(res)
+      });
+    }
   }
 }
 
